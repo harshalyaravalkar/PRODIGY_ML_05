@@ -1,33 +1,90 @@
 # PRODIGY_ML_05
-Food Recognition and Calorie Estimation using CNN
+
+# Food Recognition and Calorie Estimation using Deep Learning
 
 ## Internship Details
 
-- Company: Prodigy InfoTech
-- Track Code: ML
-- Task Number: 01
-- Intern Name: Harshal Laxman Yaravalkar
-- Domain: Machine Learning
-- Duration: 1 Month
-- Mentor: Prodigy InfoTech Team
+* Company: Prodigy InfoTech
+* Track Code: ML
+* Task Number: 05
+* Intern Name: Harshal Laxman Yaravalkar
+* Domain: Machine Learning
+* Duration: 1 Month
+* Mentor: Prodigy InfoTech Team
+
+---
+
+## LinkedIn Post
+
+As part of the internship requirements, I documented this task and the knowledge gained throughout the implementation process on LinkedIn.
+
+🔗 LinkedIn Post:
+
+[View LinkedIn Post](https://www.linkedin.com/posts/your-post-link-here)
 
 ---
 
 ## Task Objective
 
-The objective of this task was to implement a Linear Regression model capable of predicting house prices based on important housing features such as square footage, number of bedrooms, and number of bathrooms.
+The objective of this task was to develop a Food Recognition and Calorie Estimation system using Deep Learning and Computer Vision techniques.
 
-Machine Learning models are widely used in the real estate industry to estimate property values and assist buyers, sellers, and investors in making informed decisions. This project demonstrates the practical application of supervised learning techniques to solve a real-world prediction problem.
+The model was trained to recognize different food items from images and estimate their approximate calorie content. Food recognition systems are widely used in health monitoring applications, diet tracking platforms, nutrition analysis tools, and smart healthcare systems.
+
+This project demonstrates how image classification models can be applied to identify food categories and provide nutritional insights based on the predicted food item.
 
 ---
+
+## Dataset
+
+Dataset Source:
+
+https://www.kaggle.com/datasets/kmader/food41
+
+For this project, a custom subset was created from the Food-101 dataset to make training more efficient and focused.
+
+Food Categories Used:
+
+* Pizza
+* Samosa
+* Ice Cream
+* Fried Rice
+* French Fries
+* Strawberry Shortcake
+* Chicken Wings
+* Donuts
+* Pancakes
+* Chicken Curry
+
+Each category contained approximately 1000 images, resulting in a dataset of around 10,000 food images.
+
+Dataset Structure:
+
+```text
+Food_subset/
+│
+├── pizza/
+├── samosa/
+├── ice_cream/
+├── fried_rice/
+├── french_fries/
+├── strawberry_shortcake/
+├── chicken_wings/
+├── donuts/
+├── pancakes/
+└── chicken_curry/
+```
+
+---
+
 ## Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Scikit-Learn
-- Matplotlib
-- Jupyter Notebook
+* Python
+* TensorFlow
+* Keras
+* NumPy
+* Matplotlib
+* Scikit-Learn
+* Jupyter Notebook
 
 ---
 
@@ -35,36 +92,82 @@ Machine Learning models are widely used in the real estate industry to estimate 
 
 ### 1. Data Collection
 
-The housing dataset was obtained from Kaggle and loaded into a Pandas DataFrame for analysis.
+A subset of food images was selected from the Food-101 dataset and organized into separate folders based on food categories.
 
----
 ### 2. Data Preprocessing
 
-Several preprocessing steps were performed, including:
+Several preprocessing techniques were applied:
 
-- Handling missing values
-- Selecting useful features
-- Preparing data for model training
-- Splitting data into training and testing sets
+* Image loading
+* Image resizing
+* Normalization
+* Dataset batching
+* Label generation
 
-### 3. Model Development
+These preprocessing steps ensured that the images were suitable for deep learning model training.
 
-A Linear Regression model was implemented using Scikit-Learn. The model was trained on selected housing features and learned the relationship between property characteristics and house prices.
+### 3. Dataset Preparation
 
-### 4. Prediction
+The dataset was automatically split into:
 
-After training, the model was used to predict house prices based on user-provided input values.
+* Training Dataset
+* Validation Dataset
 
-### 5. Evaluation
+This allowed the model to be evaluated on unseen images during training.
 
-The model's performance was evaluated by comparing predicted values with actual values from the test dataset.
+### 4. Model Development
+
+A Deep Learning image classification model was implemented using TensorFlow and Keras.
+
+The model was trained to learn visual patterns from food images and classify them into one of the predefined food categories.
+
+The architecture included:
+
+* Data Augmentation Layers
+* Feature Extraction Layers
+* Dense Layers
+* Softmax Output Layer
+
+### 5. Model Training
+
+The model was trained on thousands of food images over multiple epochs.
+
+The Adam optimizer was used for optimization, while Sparse Categorical Crossentropy was used as the loss function.
+
+### 6. Food Recognition
+
+After training, the model was able to classify food images and predict the most likely food category.
+
+### 7. Calorie Estimation
+
+A calorie mapping system was implemented where each food category was associated with an estimated calorie value.
+
+Example:
+
+| Food Item            | Estimated Calories |
+| -------------------- | ------------------ |
+| Pizza                | 285 kcal           |
+| Samosa               | 262 kcal           |
+| Ice Cream            | 207 kcal           |
+| Fried Rice           | 330 kcal           |
+| French Fries         | 312 kcal           |
+| Strawberry Shortcake | 250 kcal           |
+| Chicken Wings        | 290 kcal           |
+| Donuts               | 452 kcal           |
+| Pancakes             | 227 kcal           |
+| Chicken Curry        | 240 kcal           |
+
+### 8. Visualization
+
+Prediction results were visualized using sample food images, displaying both the predicted food category and estimated calorie content.
 
 ---
+
 ## Results
 
-The Linear Regression model successfully learned patterns from the dataset and generated house price predictions based on the provided features.
+The model successfully classified food images into multiple categories and generated calorie estimates based on the predicted class.
 
-This project demonstrated how machine learning can be applied to real estate price estimation and highlighted the importance of data preprocessing and feature selection in building effective predictive models.
+This project demonstrated how deep learning and computer vision techniques can be combined to build intelligent food recognition systems capable of supporting nutrition-related applications.
 
 ---
 
@@ -72,40 +175,57 @@ This project demonstrated how machine learning can be applied to real estate pri
 
 During this task, I gained practical experience in:
 
-- Supervised Machine Learning
-- Linear Regression
-- Data Cleaning and Preprocessing
-- Feature Engineering
-- Model Training and Testing
-- Prediction and Evaluation
-- Real-world Machine Learning Workflows
+* Deep Learning
+* Computer Vision
+* Image Classification
+* TensorFlow and Keras
+* Data Augmentation
+* Food Recognition Systems
+* Model Evaluation
+* Nutrition and Calorie Estimation Applications
 
 ---
+
 ## Screenshots
 
-### Model Training Output
+### Dataset Loading
 
-<img width="1920" height="1020" alt="Screenshot 2026-06-01 190112" src="https://github.com/user-attachments/assets/ff9be4ed-0c69-4cd9-a456-d2656698bc80" />
+<img width="1165" height="134" alt="Screenshot 2026-06-02 175004" src="https://github.com/user-attachments/assets/edc81e48-9a3e-4239-8a74-ec6130c4cd7d" />
 
-### House Price Prediction Interface
 
-<img width="1920" height="1020" alt="Screenshot 2026-06-01 185951" src="https://github.com/user-attachments/assets/01b87673-0829-407c-8daf-a7ad9dbbf9c2" />
+### Model Training Progress
 
-### Prediction Results
+<img width="1025" height="560" alt="Screenshot 2026-06-02 175116" src="https://github.com/user-attachments/assets/5327a302-797c-44f9-b884-85d22d14c937" />
 
-<img width="1920" height="1020" alt="Screenshot 2026-06-01 190022" src="https://github.com/user-attachments/assets/0b7f2780-71e3-495f-b429-43305e61dcc8" />
+
+### Accuracy Graph
+
+<img width="631" height="191" alt="Screenshot 2026-06-02 175124" src="https://github.com/user-attachments/assets/ce79b85c-78d7-4894-ad93-af8295b3feb3" />
+
+<img width="826" height="521" alt="Screenshot 2026-06-02 175133" src="https://github.com/user-attachments/assets/0998a74c-8fa3-4863-9325-1bc8b58d28dc" />
+
+
+
+### Food Recognition Results
+
+<img width="836" height="619" alt="Screenshot 2026-06-02 175157" src="https://github.com/user-attachments/assets/6b5029b5-c0c6-448f-ab9e-9193b86a1f30" />
 
 ---
+
 ## Conclusion
 
-This project provided valuable hands-on experience with regression-based machine learning models. By implementing a Linear Regression algorithm, I learned how data preprocessing, model training, and evaluation contribute to building predictive systems. The project successfully demonstrated the practical application of machine learning in predicting house prices and strengthened my understanding of supervised learning techniques.
+This project provided hands-on experience in building an end-to-end food recognition system using deep learning. By combining image classification with calorie estimation, I learned how machine learning can be applied to real-world health and nutrition problems.
+
+The project successfully demonstrated the use of computer vision techniques for recognizing food items and generating nutritional information, highlighting the practical applications of artificial intelligence in healthcare and lifestyle management.
+
+```
 
 ## How to Run
 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/PRODIGY_ML_01.git
+git clone https://github.com/your-username/PRODIGY_ML_05.git
 ```
 
 2. Install dependencies
@@ -114,16 +234,26 @@ git clone https://github.com/your-username/PRODIGY_ML_01.git
 pip install -r requirements.txt
 ```
 
-3. Open the notebook
+3. Open Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
-4. run train_model.py
 
-5. run app.py
+4. Run all cells to train the model and generate food predictions with calorie estimates.
 
-```bash
-streamlit run app.py
+---
+
+## Requirements
+
+```txt
+tensorflow
+numpy
+matplotlib
+scikit-learn
+jupyter
 ```
 
+---
+
+#MachineLearning #DeepLearning #ComputerVision #FoodRecognition #ImageClassification #TensorFlow #Keras #Python #DataScience #ArtificialIntelligence #ProdigyInfoTech #Internship
