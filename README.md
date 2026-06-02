@@ -225,13 +225,7 @@ The project successfully demonstrated the use of computer vision techniques for 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/PRODIGY_ML_05.git
-```
-
-2. Install dependencies
-
-```bash
-pip install -r requirements.txt
+git clone https://github.com/harshalyaravalkar/PRODIGY_ML_05.git
 ```
 
 3. Open Jupyter Notebook
